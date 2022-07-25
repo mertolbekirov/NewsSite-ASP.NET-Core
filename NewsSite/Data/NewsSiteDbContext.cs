@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using NewsSite.Data.Models;
 
 namespace NewsSite.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class NewsSiteDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public NewsSiteDbContext(DbContextOptions<NewsSiteDbContext> options)
             : base(options)
         {
         }
