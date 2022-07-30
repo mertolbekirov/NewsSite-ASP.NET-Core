@@ -10,5 +10,7 @@ namespace NewsSite.Data
             : base(options)
         {
         }
-    }
+
+        public DbSet<Post> Posts { get; init; }
+    }        
 }

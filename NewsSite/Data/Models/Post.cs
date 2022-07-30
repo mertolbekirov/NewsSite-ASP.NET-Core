@@ -8,8 +8,6 @@ namespace NewsSite.Data.Models
 
         public byte[] InPostImageData { get; set; }
 
-        public byte[] ThumbnailData { get; set; }
-
         public int Id { get; set; }
 
         [Required]
