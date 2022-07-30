@@ -43,8 +43,8 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapDefaultAreaRoute();
     endpoints.MapDefaultControllerRoute();
+    endpoints.MapDefaultAreaRoute();
     endpoints.MapRazorPages();
 });
 
