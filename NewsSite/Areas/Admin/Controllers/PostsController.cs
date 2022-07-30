@@ -1,4 +1,5 @@
-﻿using NewsSite.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using NewsSite.Data;
 
 namespace NewsSite.Areas.Admin.Controllers
 {
@@ -11,6 +12,11 @@ namespace NewsSite.Areas.Admin.Controllers
             this.data = data;
         }
 
+        [HttpGet]
+        public IActionResult Post()
+            => View();
+
+        [HttpPost]
         public void Post(string content, string videoUrl, string language)
         {
             var post = new Data.Models.Post
