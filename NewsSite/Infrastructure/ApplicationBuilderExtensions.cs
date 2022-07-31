@@ -45,7 +45,7 @@ namespace NewsSite.Infrastructure
 
                     await roleManager.CreateAsync(role);
 
-                    const string adminEmail = "mertol2002@gmail.com";
+                    const string adminEmail = "newsAdmin@gmail.com";
                     const string adminPassword = "pw123123pw";
 
                     var user = new ApplicationUser

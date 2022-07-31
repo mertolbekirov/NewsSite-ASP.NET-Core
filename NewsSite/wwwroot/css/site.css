@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#editor {
+    border: 1px solid #ccc;
+}
+
+button.ql-showHtml:after {
+    content: "[source]";
+}

@@ -12,7 +12,14 @@ builder.Services.AddDbContext<NewsSiteDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.User.RequireUniqueEmail = false;
+})
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<NewsSiteDbContext>();
 builder.Services.AddRazorPages();
@@ -43,8 +50,8 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapDefaultControllerRoute();
     endpoints.MapDefaultAreaRoute();
+    endpoints.MapDefaultControllerRoute();
     endpoints.MapRazorPages();
 });
 

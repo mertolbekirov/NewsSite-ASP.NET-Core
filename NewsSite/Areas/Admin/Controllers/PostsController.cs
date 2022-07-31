@@ -14,7 +14,12 @@ namespace NewsSite.Areas.Admin.Controllers
 
         [HttpGet]
         public IActionResult Post()
-            => View();
+        {
+            TempData["ShowTinyMce"] = true;
+
+            return View();
+        }
+        
 
         [HttpPost]
         public void Post(string content, string videoUrl, string language)
